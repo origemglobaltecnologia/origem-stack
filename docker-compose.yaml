@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  servico-clientes:
+    image: origemglobaltecnologia/servico-clientes:v1
+    container_name: servico-clientes
+    restart: always
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+    networks:
+      - origem-network
+
+networks:
+  origem-network:
+    driver: bridge
